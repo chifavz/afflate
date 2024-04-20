@@ -6,31 +6,30 @@ import Seo from '../../components/seo'
 const BlogPage = ({ data }) => {
   return (
     <Layout pageTitle="Posts">
-            {
-        data.allMdx.nodes.map((node) => (
-          <article key={node.id}>
-                 <h2>
-              <Link to={`/blog/${node.frontmatter.slug}`}>
-                {node.frontmatter.title}
-              </Link>
-            </h2>
-            <p>Posted: {node.frontmatter.date}</p>
-            <p>{node.excerpt}</p>
-          </article>
-        ))
-      }
-      
+      <Seo title="Posts" />
+      {data.allMdx.nodes.map((node) => (
+        <article key={node.id}>
+          <h2>
+            <Link to={`/blog/${node.frontmatter.slug}`}>
+              {node.frontmatter.title}
+            </Link>
+          </h2>
+          <p>Posted: {node.frontmatter.date}</p>
+          <p>{node.excerpt}</p>
+        </article>
+      ))}
     </Layout>
   )
 }
 
 export const query = graphql`
   query {
-    allMdx(sort: {frontmatter: {date: DESC}}) {
+    allMdx(sort: { frontmatter: { date: DESC } }) {
       nodes {
         frontmatter {
           date(formatString: "MMMM D, yyyy")
           title
+          slug
         }
         id
         excerpt
@@ -39,6 +38,5 @@ export const query = graphql`
   }
 `
 
-export const Head = () => <Seo title="Posts" />
-
 export default BlogPage
+
