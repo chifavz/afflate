@@ -6,14 +6,25 @@ import Seo from '../components/seo'
 
 const HomePage = ({ data }) => {
   return (
-    <Layout pageTitle="Chifavz Studio Tech Review">
+    <Layout pageTitle="Chifavz Tech Review">
       <Seo title="Home Page" />
       <StaticImage
-        alt="gadgets"
-        src="../images/techgadget.png"
+        alt="two people with square POS"
+        src="../images/squares.jpg"
       />
-      <h2>Discover the Latest in Tech with Chifavz Studio</h2>
-<p>At Chifavz Studio, we're dedicated to providing insightful reviews and recommendations on the latest technology products. Whether you're a tech enthusiast seeking the newest gadgets, a casual user looking for reliable devices, or someone searching for the perfect tech gift, we've got you covered. Explore our reviews to find the best tech solutions for your digital lifestyle.</p>
+      
+<div>
+  <h2>Sign Up with Square for Seamless Payment Solutions</h2>
+  <p>Ready to revolutionize the way you accept payments? Sign up with Square today and enjoy a range of benefits, including:</p>
+  <ul>
+    <li>Fast and secure payment processing</li>
+    <li>Seamless integration with your business</li>
+    <li>Robust analytics for better business insights</li>
+    <li>24/7 customer support</li>
+  </ul>
+  <p>Take your business to the next level with Square. <a href="https://squareup.com">Sign up now</a>!</p>
+</div>
+
 
       <h3>Latest Posts:</h3>
       <ul>
@@ -23,6 +34,7 @@ const HomePage = ({ data }) => {
           </li>
         ))}
       </ul>
+     
     </Layout>
   )
 }
